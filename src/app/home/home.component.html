@@ -1,1 +1,14 @@
-<p>home works!</p>
+<app-header></app-header>
+<div *ngIf="popularMovies.length > 0">
+  <div *ngFor="let movie of popularMovies">
+    <div>
+      <div>
+        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="poster" />
+      </div>
+      <div>
+        <div (click)="goToMovie(movie.id)">{{movie.original_title}}</div>
+        <div>Avaliacao: {{movie.vote_average}}</div>
+      </div>
+    </div>
+  </div>
+</div>
